@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objects</title>
+</head>
+<body>
+    <script>    
+        const product = {
+         //Properties  - key:value pairs 
+        name: "Apple",
+        price: 1.2,
+        quantity: 10,
+        //Method
+         };
+         console.log(product.price);
+         console.log(product.name);
+
+         //Adding a new property
+         product.color = "Red";
+         console.log(product.color);
+
+         //Modifying a property value
+         product.price = 100;
+         console.log(product);
+
+         //Deleting a property
+         delete product.quantity;
+         //Dot Notation
+         console.log(product.quantity); 
+
+         const product2 = {
+             name: "Banana",
+             price: 0.5,
+             quantity: 5,
+             color: "Yellow",
+             rating: {
+                stars : 4.5,
+                count : 89
+             },
+             fun: function function1(){
+                 console.log("Trying Out Function in an Object");
+                 console.log(2+1);
+             }
+         };
+         console.log(product2);
+         //Bracket Notation
+         console.log(product2['price']);
+         console.log(product2.rating.stars);
+         product2.fun();
+
+         //JS to JSON
+         console.log(JSON.stringify(product2));
+
+         //JSON to JS
+         const jsonString = '{"name":"Apple","price":1.2,"quantity":10,"color":"Red"}';
+         const product3 = JSON.parse(jsonString);
+         console.log(product3);
+
+         //Local Storage
+         localStorage.setItem("product", JSON.stringify(product2));
+         const retrievedProduct = JSON.parse(localStorage.getItem("product"));
+         console.log(retrievedProduct);
+
+         //Auto-Boxing
+         console.log('hello' .toUpperCase());
+
+         //Referencing
+         const person = {
+             name: 'John',
+             age: 30
+         };
+
+         const anotherPerson = person;
+         anotherPerson.name = 'Jane';
+         console.log(person.name); // Outputs: Jane
+
+         //Copying
+         const person2 = {...person};
+         person2.name = 'Mike';
+         console.log(person.name); // Outputs: John
+
+         //Short hand function syntax
+         function Method() {
+             console.log("Short Hand Function");
+         }
+
+    </script>
+</body>
+</html>

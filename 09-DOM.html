@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+    <style>
+        button {
+            font-size: 24px;
+            padding: 10px;
+            background-color: #f1f1f1;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        button:active {
+            background-color: #ccc;
+            transform: translateY(4px);
+        }
+
+        button:focus {
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+    <button>Hello</button>
+    <button class="js-button">Second Button</button>
+
+    <script>
+        //A built in document object linked to the web page.Combines HTML And JS giving JS control
+        //It has methods 
+        //Properties 
+        document.title = 'Learn DOM';
+        console.log(document.title);
+
+        //The body of the code
+        document.body
+        console.log(document.body);
+
+        //Document Query Selectors 
+        const buttons = document.querySelectorAll('button');
+        buttons.forEach(button => {
+            button.addEventListener('click', () => {
+                alert('Button clicked!');
+            });
+        });
+
+
+        console.log(document.querySelector('.js-button'))
+
+          
+        //Manipulating DOM
+        //const newButton = document.createElement('button');
+        //newButton.textContent = 'New Button';
+        //newButton.style.backgroundColor = 'blue';
+
+       // document.body.appendChild(newButton);
+
+        //Event Listeners
+        //newButton.addEventListener('click', () => {
+          //  alert('New Button Clicked!');
+        //});
+
+        //newButton.addEventListener('dblclick', () => {
+          //  alert('New Button Double Clicked!');
+        //});
+
+        //newButton.addEventListener('contextmenu', (event) => {
+          //  event.preventDefault();
+            //alert('New Button Context Menu Clicked!');
+        //});
+    </script>
+</body>
+</html>
